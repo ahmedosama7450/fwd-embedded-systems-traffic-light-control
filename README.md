@@ -83,3 +83,6 @@ The complete flow is described by the flow chart [below](#system-flow-chart)
 ## System flow chart
 ![flowchart](https://user-images.githubusercontent.com/76496317/199082231-ed8e28b7-f274-40a1-91bc-5737ca78b1c6.png)
 
+## Folder structure
+![folder structure](https://user-images.githubusercontent.com/76496317/199083994-b0dbed93-c8c6-41e0-bc1b-26e8746d05b2.png)
+
