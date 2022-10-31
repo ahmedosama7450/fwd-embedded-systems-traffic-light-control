@@ -81,3 +81,5 @@ The complete flow is described by the flow chart [below](#system-flow-chart)
   - `void BUTTON_init()`
 
 ## System flow chart
+![flowchart](https://user-images.githubusercontent.com/76496317/199082231-ed8e28b7-f274-40a1-91bc-5737ca78b1c6.png)
+
