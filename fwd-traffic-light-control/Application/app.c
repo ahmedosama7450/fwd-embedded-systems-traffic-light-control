@@ -21,13 +21,13 @@ void normalMode() {
 	wasRedLedOn = 0;
 	if(buttonPressed) return;
 
-	// Then, blink yellow
+	// Then, turn off green => blink yellow
 	LED_off(LED_CARS_PORT, LED_GREEN_PIN);
 	LED_blink(LED_CARS_PORT, LED_YELLOW_PIN);
 	wasRedLedOn = 0;
 	if(buttonPressed) return;
 
-	// Lastly, turn on red
+	// Lastly, turn off yellow => turn on red
 	LED_off(LED_CARS_PORT, LED_YELLOW_PIN);
 	LED_on(LED_CARS_PORT, LED_RED_PIN);
 	TIMER_delay_5s();
@@ -46,31 +46,22 @@ void pedestrianMode() {
 		// For cars and pedestrians, blink both yellow
 		LED_off(LED_CARS_PORT, LED_RED_PIN);
 		LED_off(LED_CARS_PORT, LED_GREEN_PIN);
-
 		LED_off(LED_PEDESTRIANS_PORT, LED_RED_PIN);
 		LED_off(LED_PEDESTRIANS_PORT, LED_GREEN_PIN);
-		
 		LED_double_blink(LED_CARS_PORT, LED_YELLOW_PIN, LED_PEDESTRIANS_PORT, LED_YELLOW_PIN);
-				
-		// The, turn on cars red led and pedestrians green led
+		
+		// The, turn off both yellow => turn on cars red led and pedestrians green led
 		LED_off(LED_CARS_PORT, LED_YELLOW_PIN);
-		LED_on(LED_CARS_PORT, LED_RED_PIN);
-
 		LED_off(LED_PEDESTRIANS_PORT, LED_YELLOW_PIN);
+		LED_on(LED_CARS_PORT, LED_RED_PIN);
 		LED_on(LED_PEDESTRIANS_PORT, LED_GREEN_PIN);
 	}
 	
 	TIMER_delay_5s();
 	
-	// Blink both yellow
+	// Turn off cars red => Blink both yellow
 	LED_off(LED_CARS_PORT, LED_RED_PIN);
-	// LED_off(LED_PEDESTRIANS_PORT, LED_GREEN_PIN); // TODO: Maybe we should uncomment this line
-	
 	LED_double_blink(LED_CARS_PORT, LED_YELLOW_PIN, LED_PEDESTRIANS_PORT, LED_YELLOW_PIN);
-	
-	// End pedestrian mode, turn off pedestrian green
-	LED_on_only(LED_PEDESTRIANS_PORT, LED_RED_PIN);
-	LED_on_only(LED_CARS_PORT, LED_GREEN_PIN);
 	
 	isNormalMode = 1;
 	wasRedLedOn = 0;
