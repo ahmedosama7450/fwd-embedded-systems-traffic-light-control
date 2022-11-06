@@ -10,6 +10,7 @@
 #define BUTTON_H_
 
 #include "../../MCAL/DIO/dio.h"
+#include "../../MCAL/Interrupts/interrupts.h"
 
 #define BUTTON_PORT PORT_D
 #define BUTTON_PIN PIN2

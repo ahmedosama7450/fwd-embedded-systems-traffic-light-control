@@ -15,8 +15,8 @@
 void TIMER_init();
 EN_error_state TIMER_start(uint16_t prescaler, uint8_t initialValue);
 void TIMER_stop();
-void TIMER_delay(float delay_in_ms, uint16_t prescaler);
-void TIMER_delay_5s();
-void TIMER_delay_1s();
+EN_error_state TIMER_delay(float delay_in_ms, uint16_t prescaler);
+EN_error_state TIMER_delay_5s();
+EN_error_state TIMER_delay_1s();
 
 #endif /* TIMER_H_ */

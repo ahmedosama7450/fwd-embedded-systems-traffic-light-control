@@ -9,10 +9,6 @@
 
 void BUTTON_init() {
 	DIO_init(BUTTON_PORT, BUTTON_PIN, IN);
+	INTERRUPTS_init();
 }
 
-//uint8_t BUTTON_pressed() {
-	//uint8_t pressed;
-	//DIO_read(BUTTON_PORT, BUTTON_PIN, &pressed);
-	//return pressed;
-//}

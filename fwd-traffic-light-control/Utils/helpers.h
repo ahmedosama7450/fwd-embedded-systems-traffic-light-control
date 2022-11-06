@@ -23,6 +23,8 @@ typedef enum EN_error_state
 	ERR
 } EN_error_state;
 
+#define ACCUMULATE_ERROR(RESULT_ERROR_STATE, CURRENT_ERROR_STATE) RESULT_ERROR_STATE == ERR ? ERR : CURRENT_ERROR_STATE;
+
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;

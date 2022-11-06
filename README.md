@@ -55,9 +55,9 @@ The complete flow is described by the flow chart [below](#system-flow-chart)
   - `void TIMER_init()`
   - `EN_error_state TIMER_start(uint16_t prescaler, uint8_t initialValue)`
   - `void TIMER_stop()`
-  - `void TIMER_delay(float delay_in_ms, uint16_t prescaler)`
-  - `void TIMER_delay_5s()`
-  - `void TIMER_delay_1s()`
+  - `EN_error_state TIMER_delay(float delay_in_ms, uint16_t prescaler)`
+  - `EN_error_state TIMER_delay_5s()`
+  - `EN_error_state TIMER_delay_1s()`
 
 - Interrupts Driver
 
@@ -69,23 +69,25 @@ The complete flow is described by the flow chart [below](#system-flow-chart)
 
   - LEDs ports & pins macros
   - `void LEDS_init()`
-  - `void LED_on(EN_port_t port, EN_pin_t pin)`
-  - `void LED_off(EN_port_t port, EN_pin_t pin)`
-  - `void LED_toggle(EN_port_t port, EN_pin_t pin)`
-  - `void LED_blink(EN_port_t port, EN_pin_t pin)`
-  - `void LED_double_blink(EN_port_t port1, EN_pin_t pin1, EN_port_t port2, EN_pin_t pin2)`
-  - `void LED_on_only(EN_port_t port, EN_pin_t pin)`
+  - `EN_error_state LED_on(EN_port_t port, EN_pin_t pin)`
+  - `EN_error_state LED_off(EN_port_t port, EN_pin_t pin)`
+  - `EN_error_state LED_toggle(EN_port_t port, EN_pin_t pin)`
+  - `EN_error_state LED_blink(EN_port_t port, EN_pin_t pin)`
+  - `EN_error_state LED_double_blink(EN_port_t port1, EN_pin_t pin1, EN_port_t port2, EN_pin_t pin2)`
+  - `EN_error_state LED_on_only(EN_port_t port, EN_pin_t pin)`
 
 - Button Driver
   - Button port & pin macros
   - `void BUTTON_init()`
 
 ## System flow chart
+
 ![flowchart](https://user-images.githubusercontent.com/76496317/199082231-ed8e28b7-f274-40a1-91bc-5737ca78b1c6.png)
 
 ## Folder structure
+
 ![folder structure](https://user-images.githubusercontent.com/76496317/199083994-b0dbed93-c8c6-41e0-bc1b-26e8746d05b2.png)
 
 ## Hardware
-![Hardware](https://user-images.githubusercontent.com/76496317/200070118-5da918ee-cad5-4384-a883-12123151846a.png)
 
+![Hardware](https://user-images.githubusercontent.com/76496317/200070118-5da918ee-cad5-4384-a883-12123151846a.png)

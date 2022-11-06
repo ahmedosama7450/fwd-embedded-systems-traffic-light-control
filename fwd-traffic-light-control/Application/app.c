@@ -72,7 +72,6 @@ void APP_init() {
 	LEDS_init();
 	BUTTON_init();
 	TIMER_init();
-	INTERRUPTS_init();
 }
 
 void APP_start() {

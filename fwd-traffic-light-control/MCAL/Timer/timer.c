@@ -58,7 +58,7 @@ void TIMER_stop()
 	TCCR0 = 0x00;
 }
 
-void TIMER_delay(float delay_in_ms, uint16_t prescaler)
+EN_error_state TIMER_delay(float delay_in_ms, uint16_t prescaler)
 {		
 	// Timer calculations
 	double clk_freq = 1000000; // 10^6
@@ -70,27 +70,31 @@ void TIMER_delay(float delay_in_ms, uint16_t prescaler)
 	int initial_value = (int)(timer_max_count - (delay_in_ms / tick) / 2);
 	
 	// Start timer and count overflows until given delay
-	TIMER_start(prescaler, initial_value);
+	EN_error_state errorState = TIMER_start(prescaler, initial_value);
 	
-	uint32_t overflow_counter = 0;
-	while (overflow_counter < num_overflows)
-	{
-		// Wait for the overflow flag to be set
-		while ((TIFR & (1 << 0)) == 0) {}
+	if(errorState == OK) {
+		uint32_t overflow_counter = 0;
+		while (overflow_counter < num_overflows)
+		{
+			// Wait for the overflow flag to be set
+			while ((TIFR & (1 << 0)) == 0) {}
 			
-		// Clear the overflow flag
-		TIFR |= (1 << 0);
+			// Clear the overflow flag
+			TIFR |= (1 << 0);
 		
-		overflow_counter++;
+			overflow_counter++;
+		}
+	
+		TIMER_stop();
 	}
 	
-	TIMER_stop();
+	return errorState;
 }
 
-void TIMER_delay_5s() {
-	TIMER_delay(5000, 1024);
+EN_error_state TIMER_delay_5s() {
+	return TIMER_delay(5000, 1024);
 }
 
-void TIMER_delay_1s() {
-	TIMER_delay(1000, 1024);
+EN_error_state TIMER_delay_1s() {
+	return TIMER_delay(1000, 1024);
 }
