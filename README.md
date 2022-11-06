@@ -1,6 +1,7 @@
 # On demand traffic light control
 
 This is the second project of the fwd embedded systems professional course
+
 This document is also available as pdf in the repository [here](https://github.com/ahmedosama7450/fwd-embedded-systems-traffic-light-control/blob/main/system%20design.pdf)
 
 ## System description
