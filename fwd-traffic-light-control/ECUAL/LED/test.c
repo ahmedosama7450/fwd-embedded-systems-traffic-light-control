@@ -17,11 +17,9 @@ int testLED(void)
 	{
 		
 		LED_on(LED_CARS_PORT, LED_GREEN_PIN);
-		LED_on(LED_CARS_PORT, LED_GREEN_PIN);
-		
-		TIMER_delay(100, 256);
-		
+		TIMER_delay_1s();
 		LED_off(LED_CARS_PORT, LED_GREEN_PIN);
-		LED_off(LED_CARS_PORT, LED_GREEN_PIN);	
+		
+		LED_blink(LED_CARS_PORT, LED_YELLOW_PIN);
 	}
 }

@@ -8,6 +8,6 @@
 #include "button.h"
 
 int testButton(void) {
-	BUTTON_init();
+	BUTTON_init();	
 	return 0;
 }
